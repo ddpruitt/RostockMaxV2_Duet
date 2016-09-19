@@ -10,7 +10,6 @@ From EEPROM dated 2016.02.26
 
 | Data Type | Position | Value | Description |
 | --- | ---: | --- | --- |
-
 | EPR:2 | 75 | 250000 | Baudrate |
 | EPR:3 | 129 | 1251.712 | Filament printed [m] |
 | EPR:2 | 125 | 768950 | Printer active [s] |
