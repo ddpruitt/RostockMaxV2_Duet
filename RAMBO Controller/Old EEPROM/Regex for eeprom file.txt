@@ -1,3 +1,29 @@
-Regex for EEPROM settings
+Regex to convert EEPROM settings to github table.
 
-EPR:(\d) (\d+) (.*?) (.*)
+Find:		(EPR\:\d) (\d+) (-?[0-9]\d*(\.\d+)?) (.*)
+
+Replace:	| \1 | \2 | \3 | \5
+
+Example:
+
+EPR:2 75 250000 Baudrate
+EPR:2 79 1800000 Max. inactive time [ms,0=off]
+EPR:2 83 0 Stop stepper after inactivity [ms,0=off]
+EPR:3 11 80.0000 Steps per mm
+EPR:3 23 300.000 Max. feedrate [mm/s]
+EPR:3 35 120.000 Homing feedrate [mm/s]
+
+After replace:
+
+| EPR:2 | 75 | 250000 | Baudrate
+| EPR:2 | 79 | 1800000 | Max. inactive time [ms,0=off]
+| EPR:2 | 83 | 0 | Stop stepper after inactivity [ms,0=off]
+| EPR:3 | 11 | 80.0000 | Steps per mm
+| EPR:3 | 23 | 300.000 | Max. feedrate [mm/s]
+| EPR:3 | 35 | 120.000 | Homing feedrate [mm/s]
+
+
+Column Headers:
+
+| Data Type | Position | Value | Description |
+| --- | ---: | --- | --- |
