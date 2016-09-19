@@ -1,0 +1,3 @@
+Regex for EEPROM settings
+
+EPR:(\d) (\d+) (.*?) (.*)
