@@ -24,7 +24,7 @@ M574 X2 Y2 Z2 S1					; set endstop configuration (all endstops at high end, acti
 M665 R171.64 L325.0 B150 H493.18  X0 Y0	; set delta radius, diagonal rod length, printable radius, homed height and XY tower corrections
 M666 X0 Y0 Z0						; put your endstop adjustments here, or use auto calibration to find them
 M92 X80 Y80 Z80						; Set axis steps/mm
-M906 X1000 Y1000 Z1000 E800			; Set motor currents (mA)
+M906 X1000 Y1000 Z1000 E600			; Set motor currents (mA)
 M201 X3000 Y3000 Z3000 E1000		; Accelerations (mm/s^2)
 M203 X18000 Y18000 Z18000 E3600		; Maximum speeds (mm/min)
 M566 X600 Y600 Z600 E600			; Maximum instant speed changes
