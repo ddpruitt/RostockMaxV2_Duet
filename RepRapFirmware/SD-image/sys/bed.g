@@ -6,7 +6,7 @@ G31 X0 Y0               ; don't want any probe offset for this
 G28                     ; home the printer
 
 ; Probe the bed and do auto calibration
-G1 X0 Y0 Z10 F15000		; go to just above the first probe point to speed up probing
+;G1 X0 Y0 Z10 F15000		; go to just above the first probe point to speed up probing
 
 ; Probe the bed and do 6- or 7-factor auto calibration
 G30 P0 X-86.60 Y-50.00 Z-99999 ; X tower

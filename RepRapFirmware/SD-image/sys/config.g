@@ -21,7 +21,7 @@ M569 P3 S0							; Drive 3 goes backwards
 M569 P4 S0							; Drive 4 goes backwards
 M574 X2 Y2 Z2 S1					; set endstop configuration (all endstops at high end, active high)
 
-M665 R171.64 L325.0 B150 H493.18  X0 Y0	; set delta radius, diagonal rod length, printable radius, homed height and XY tower corrections
+M665 R171.64 L325.0 B150 H286.57 X0 Y0	; set delta radius, diagonal rod length, printable radius, homed height and XY tower corrections
 M666 X0 Y0 Z0						; put your endstop adjustments here, or use auto calibration to find them
 M92 X80 Y80 Z80						; Set axis steps/mm
 M906 X1000 Y1000 Z1000 E600			; Set motor currents (mA)
@@ -45,8 +45,9 @@ G10 P0 S0 R0                        ; Set tool 0 operating and standby temperatu
 M92 E553	                       	; Set extruder steps per mm for first and second extruders
 
 ; Z probe and compensation definition
-M558 P1 X0 Y0 Z0 H3 F300 T12000		; Z probe is IR and is not used for homing any axes, Z probe dive height 3mm, probing speed 300mm/min, travel speed 12000mm/min
-G31 X0 Y0 Z1.66 P500				; Set the zprobe offset and threshold (put your own values here). For a delta, use zero X and Y offset.
+; *** If you have an IR zprobe instead of a switch, change P4 to P1 in the following M558 command
+M558 P4 X0 Y0 Z0 H3                                       ; Z probe is a switch and is not used for homing any axes
+G31 X0 Y0 Z-.05 P500                                      ; Set the zprobe height and threshold (put your own values here)
 
 ;*** If you are using axis compensation, put the figures in the following command
 M556 S78 X0 Y0 Z0                   ; Axis compensation here
