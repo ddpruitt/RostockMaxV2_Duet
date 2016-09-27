@@ -35,14 +35,14 @@ M83                                 ; ...but relative extruder moves
 ; Thermistors and heaters
 M305 P0 T100000 B3950 R4700 H0 L0		; Typical Chinese bed thermistor. Put your own H and/or L values here to set the bed thermistor ADC correction.
 M305 P1 T100000 B4388 R4700 H0 L0		; E3Dv6 hot end. Put your own H and/or L values here if necessary to set the first nozzle thermistor ADC correction.
-M301 H0 P20 I0.5 D1000 T0.85 W150 B5 	; PID settings for the bed
+M301 H0 P20 I0.5 D1000 T0.50 W150 B5 	; PID settings for the bed
 M301 H1 P10 I0.10 D100 T0.50			; PID settings for extruder 0
 M570 S200								; Allow extra heating time
 
 ; Tool definitions
 M563 P0 D0 H1                       ; Define tool 0
 G10 P0 S0 R0                        ; Set tool 0 operating and standby temperatures
-M92 E553	                       	; Set extruder steps per mm for first and second extruders
+M92 E460	                       	; Set extruder steps per mm for first and second extruders
 
 ; Z probe and compensation definition
 ; *** If you have an IR zprobe instead of a switch, change P4 to P1 in the following M558 command
